@@ -574,604 +574,394 @@
 				<!-- SEARCH BAR END-->
 
 				<!--POPULAR DESTINATION SECTION START-->
-				<div
-					class="relative overflow-hidden md:pb-22.5 pb-10 md:pt-30 pt-17.5 bg-contain bg-[bottom_center] bg-repeat-x bg-[url(../images/background/Cloud-bg.png)]">
-					<div class="container">
+				<style>
+					@keyframes destEntrance {
+						0% {
+							opacity: 0;
+							transform: translateY(35px) scale(0.92);
+						}
+						100% {
+							opacity: 1;
+							transform: translateY(0) scale(1);
+						}
+					}
+
+					.dest-card-item {
+						flex: 1 1 280px;
+						max-width: 340px;
+						transition: flex-grow 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+						            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+						            box-shadow 0.5s ease;
+						animation: destEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+					}
+
+					.dest-card-item:hover {
+						flex-grow: 1.25;
+						transform: translateY(-8px);
+						z-index: 20;
+					}
+				</style>
+
+				<div class="relative overflow-hidden md:pb-22.5 pb-10 md:pt-30 pt-17.5 bg-contain bg-[bottom_center] bg-repeat-x bg-[url(../images/background/Cloud-bg.png)]">
+					<!-- Ambient Glow Orbs -->
+					<div class="absolute -top-20 right-10 w-96 h-96 bg-citrusyellow/15 rounded-full blur-3xl pointer-events-none"></div>
+					<div class="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+					<div class="container relative z-10">
 						<!-- TITLE START-->
-						<div class="text-center max-w-150 mx-auto md:mb-15 mb-7.5">
-							<h2 class="xl:text-46 md:text-40 text-3xl mb-2.5"><span class="text-citrusyellow">Domestic
-								</span>Places</h2>
-							<p class="text-base">Destinations worth exploring! Here are a few popular spots</p>
+						<div class="text-center max-w-150 mx-auto md:mb-10 mb-6">
+							<span class="inline-block px-4 py-1.5 rounded-full bg-citrusyellow/20 text-primary dark:text-citrusyellow font-bold text-xs uppercase tracking-widest mb-3 shadow-sm">
+								<i class="fa-solid fa-earth-americas me-1.5"></i> Discover the World
+							</span>
+							<h2 class="xl:text-46 md:text-40 text-3xl mb-2.5">Featured <span class="text-citrusyellow">Destinations</span></h2>
+							<p class="text-base text-gray-600 dark:text-gray-300">Explore domestic, international, and upcoming travel spots in one place!</p>
 							<div class="-mt-7">
-								<img src="assets/images/background/Title-Separator.png" alt="Image"
-									class="w-117.5 inline-block dark:invert" width="470" height="70">
+								<img src="assets/images/background/Title-Separator.png" alt="Image" class="w-117.5 inline-block dark:invert" width="470" height="70">
 							</div>
 						</div>
 						<!-- TITLE END-->
-						<div>
-							<div class="swiper reviewtwo-slider !relative !z-1 !-mt-7.5 xl:!pb-29 !pb-22.5">
-								<div class="swiper-wrapper pt-7.5">
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/lakshadweep.jpg"
-														width="309" height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Lakshadweep</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> 
-									
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/Andaman and Nicobar Islands.jpg"
-														width="309" height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Andman
-														and Nicobar</a></h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/lakshadweep.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Lakshadweep</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
 
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="bhutanPack.html"><img
-														src="assets/images/destinations/style1/bhutan.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Bhutan</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="bhutanPack.html"><img
-														src="assets/images/destinations/style1/Nepal.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Nepal</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/thailand.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Thailand</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/Andaman and Nicobar Islands.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Andman and Nicobar</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/kashmir.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Kashmir</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden"> Destinative eaches each tou Destinative eaches each tour package promotanmobile account explains destiny. Index index main index index based free shale
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/leh_ladakh.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Manali</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/himchal.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Shimla</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/meghalaya.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Meghalaya</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img
-														src="assets/images/destinations/style1/thailand.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Thailand</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-								</div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
-							</div>
+						<!-- INTERACTIVE CATEGORY TAB FILTERS -->
+						<div class="flex flex-wrap justify-center items-center gap-3 mb-12 text-center">
+							<button type="button" onclick="filterDestinations('all', this)" class="dest-filter-btn active px-6 py-2.5 rounded-full font-bold text-sm duration-300 cursor-pointer bg-citrusyellow text-primary shadow-lg scale-105">
+								<i class="fa-solid fa-grid-2 me-1.5"></i> All Places
+							</button>
+							<button type="button" onclick="filterDestinations('domestic', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+								<i class="fa-solid fa-compass me-1.5"></i> Domestic
+							</button>
+							<button type="button" onclick="filterDestinations('international', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+								<i class="fa-solid fa-plane-departure me-1.5"></i> International
+							</button>
+							<button type="button" onclick="filterDestinations('coming-soon', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+								<i class="fa-solid fa-sparkles me-1.5"></i> Coming Soon
+							</button>
 						</div>
-						
-				<!--POPULAR DESTINATION SECTION START-->
-				<div
-					class="relative overflow-hidden md:pb-22.5 pb-10 md:pt-30 pt-17.5 bg-contain bg-[bottom_center] bg-repeat-x bg-[url(../images/background/Cloud-bg.png)]">
-					<div class="container">
-						<!-- TITLE START-->
-						<div class="text-center max-w-150 mx-auto md:mb-15 mb-7.5">
-							<h2 class="xl:text-46 md:text-40 text-3xl mb-2.5"><span
-									class="text-citrusyellow">International </span>places</h2>
-							<p class="text-base">Destinations worth exploring! Here are a few popular spots</p>
-							<div class="-mt-7">
-								<img src="assets/images/background/Title-Separator.png" alt="Image"
-									class="w-117.5 inline-block dark:invert" width="470" height="70">
-							</div>
-						</div>
-						<!-- TITLE END-->
-						<div>
-							<div class="swiper reviewtwo-slider !relative !z-1 !-mt-7.5 xl:!pb-29 !pb-22.5">
-								<div class="swiper-wrapper pt-7.5">
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/lakshadweep.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Lakshadweep</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
 
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="bhutanPack.html"><img
-														src="assets/images/destinations/style1/bhutan.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Bhutan</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
+						<!-- DESTINATIONS FLEX CONTAINER (MATCHING REFERENCE DESIGN) -->
+						<div class="flex flex-wrap justify-center gap-6" id="destinations-grid">
+							<!-- ACTIVE DOMESTIC ITEMS -->
+							<div class="dest-card-item" data-category="domestic">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="lakshadweepPack.html">
+											<img src="assets/images/destinations/style1/lakshadweep.jpg" alt="Lakshadweep" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
 									</div>
-
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="bhutanPack.html"><img
-														src="assets/images/destinations/style1/Nepal.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Nepal</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-pink-100 text-pink-600 dark:bg-pink-900/40 dark:text-pink-300 mb-3">
+												Domestic
+											</span>
 										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="lakshadweepPack.html">Lakshadweep Island Paradise</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Experience pristine coral reefs, crystal lagoons, and white sandy beaches.
+										</p>
 									</div>
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/thailand.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Thailand</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/Andaman and Nicobar Islands.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Andman and Nicobar</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/kashmir.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Kashmir</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden"> Destinative eaches each tou Destinative eaches each tour package promotanmobile account explains destiny. Index index main index index based free shale
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/leh_ladakh.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Manali</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/himchal.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Shimla</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/meghalaya.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Meghalaya</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-									
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
+										<a href="lakshadweepPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
+											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										</a>
+									</div>
 								</div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
+							</div>
+
+							<div class="dest-card-item" data-category="domestic">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="lakshadweepPack.html">
+											<img src="assets/images/destinations/style1/Andaman and Nicobar Islands.jpg" alt="Andaman & Nicobar" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-pink-100 text-pink-600 dark:bg-pink-900/40 dark:text-pink-300 mb-3">
+												Domestic
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="lakshadweepPack.html">Andaman & Nicobar Islands</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Exotic tropical forests, world-class scuba diving, and historic coastal sites.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
+										<a href="lakshadweepPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
+											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- ACTIVE INTERNATIONAL ITEMS -->
+							<div class="dest-card-item" data-category="international">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="bhutanPack.html">
+											<img src="assets/images/destinations/style1/bhutan.jpg" alt="Bhutan" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300 mb-3">
+												International
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="bhutanPack.html">Bhutan Kingdom Tour</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Ancient Tiger's Nest Monastery, serene dzongs, and pristine Himalayan valleys.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
+										<a href="bhutanPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
+											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="international">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="bhutanPack.html">
+											<img src="assets/images/destinations/style1/Nepal.jpg" alt="Nepal" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300 mb-3">
+												International
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="bhutanPack.html">Nepal Himalayan Expedition</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Majestic Mt. Everest trails, Pokhara lake views, and historic temples.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
+										<a href="bhutanPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
+											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- COMING SOON ITEMS -->
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/kashmir.jpg" alt="Kashmir" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Kashmir Valley Escapes</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Serene Dal Lake houseboats, Gulmarg snow slopes, and lush pine valleys.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/leh_ladakh.jpg" alt="Manali" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Manali & Solang Valley</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Thrilling mountain sports, Solang adventures, and panoramic alpine views.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/himchal.jpg" alt="Shimla" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Shimla Hill Retreat</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Colonial architecture, Ridge walk views, and peaceful Himalayan forests.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/meghalaya.jpg" alt="Meghalaya" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Meghalaya Living Roots</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Living root bridges, Dawki crystal river, and cascading Cherrapunji falls.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/goa.jpg" alt="Goa" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Goa Sun & Beach Life</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Vibrant beach nightlife, Portuguese heritage, and watersports excitement.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="dest-card-item" data-category="coming-soon">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
+										<a href="javascript:void(0)">
+											<img src="assets/images/destinations/style1/thailand.jpg" alt="Thailand" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
+										</a>
+									</div>
+									<div class="flex flex-col flex-grow">
+										<div>
+											<span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">
+												Coming Soon
+											</span>
+										</div>
+										<h3 class="text-xl font-bold text-heading dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+											<a href="javascript:void(0)">Thailand Island Hopping</a>
+										</h3>
+										<p class="text-xs text-gray-500 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+											Exotic Phuket beaches, golden temples of Bangkok, and Phi Phi island cruises.
+										</p>
+									</div>
+									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
+										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Coming Soon</span>
+										<a href="javascript:void(0)" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm opacity-60">
+											<i class="fa-solid fa-clock duration-300 text-sm"></i>
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="absolute -left-28.75 top-2/5 w-57.5 opacity-50 animate-slide-top2"><img
-							src="assets/images/hotballon-Left.png" alt="image" width="233" height="333"></div>
-					<div class="absolute -right-13.75 top-2/5 w-27.5 animate-slide-top"><img
-							src="assets/images/hotballon-right.png" alt="image" width="110" height="166"></div>
-				</div>
-				<!--POPULAR DESTINATION SECTION END--> 
-				<!-- TITLE START-->
-						<div class="text-center max-w-150 mx-auto md:mb-15 mb-7.5">
-							<h2 class="xl:text-46 md:text-40 text-3xl mb-2.5"><span class="text-citrusyellow">Coming Soon
-								</span>Places</h2>
-							<p class="text-base">Destinations worth exploring! Here are a few popular spots</p>
-							<div class="-mt-7">
-								<img src="assets/images/background/Title-Separator.png" alt="Image"
-									class="w-117.5 inline-block dark:invert" width="470" height="70">
-							</div>
-						</div>
-						<!-- TITLE END-->
-						<div>
-							<div class="swiper reviewtwo-slider !relative !z-1 !-mt-7.5 xl:!pb-29 !pb-22.5">
-								<div class="swiper-wrapper pt-7.5">
-									
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img
-														src="assets/images/destinations/style1/thailand.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="bhutanPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Thailand</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> 
 
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/bhutan.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html"  class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Bhutan</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/Nepal.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Nepal</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									<!-- <div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="destination-detail.html"><img src="assets/images/destinations/style1/thailand.jpg" width="309" height="500" alt="Image" class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="destination-detail.html" class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Thailand</a></h3>
-											</div>
-											<div class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image" width="155" height="233" class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div> -->
-
-									
-
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/kashmir.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Kashmir</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/leh_ladakh.jpg"
-														width="309" height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Manali</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/himchal.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Shimla</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/meghalaya.jpg"
-														width="309" height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Meghalaya</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="relative z-1 group">
-											<div class="rounded-3xl overflow-hidden">
-												<a href="lakshadweepPack.html"><img
-														src="assets/images/destinations/style1/goa.jpg" width="309"
-														height="500" alt="Image"
-														class="w-full h-125 object-cover object-center"></a>
-											</div>
-											<div>
-												<h3 class="text-28"><a href="lakshadweepPack.html"
-														class="block text-primary bg-white text-center p-5 rounded-3xl absolute left-0 right-0 -bottom-px duration-500 group-hover:text-white group-hover:bg-primary">Goa</a>
-												</h3>
-											</div>
-											<div
-												class="absolute -z-1 top-0 left-1/2 -translate-x-1/2 duration-500 group-hover:-top-7.5">
-												<img src="assets/images/destinations/hotballon-right.png" alt="image"
-													width="155" height="233"
-													class="w-full max-w-75 mx-auto block duration-500">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
-							</div>
-						</div>
-					</div>
-					<div class="absolute -left-28.75 top-2/5 w-57.5 opacity-50 animate-slide-top2"><img
-							src="assets/images/hotballon-Left.png" alt="image" width="233" height="333"></div>
-					<div class="absolute -right-13.75 top-2/5 w-27.5 animate-slide-top"><img
-							src="assets/images/hotballon-right.png" alt="image" width="110" height="166"></div>
+					<div class="absolute -left-28.75 top-2/5 w-57.5 opacity-50 animate-slide-top2"><img src="assets/images/hotballon-Left.png" alt="image" width="233" height="333"></div>
+					<div class="absolute -right-13.75 top-2/5 w-27.5 animate-slide-top"><img src="assets/images/hotballon-right.png" alt="image" width="110" height="166"></div>
 				</div>
 				<!--POPULAR DESTINATION SECTION END-->
+
+				<script>
+					function filterDestinations(category, btn) {
+						document.querySelectorAll('.dest-filter-btn').forEach(b => {
+							b.classList.remove('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+							b.classList.add('border', 'border-primary/20', 'text-heading', 'dark:text-white');
+						});
+						btn.classList.add('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+						btn.classList.remove('border', 'border-primary/20', 'text-heading', 'dark:text-white');
+
+						const cards = document.querySelectorAll('.dest-card-item');
+						cards.forEach(card => {
+							if (category === 'all' || card.dataset.category === category) {
+								card.style.display = 'block';
+								card.style.opacity = '1';
+								card.style.transform = 'scale(1)';
+							} else {
+								card.style.display = 'none';
+								card.style.opacity = '0';
+								card.style.transform = 'scale(0.95)';
+							}
+						});
+					}
+				</script>
 
 				<!--WE RECOMMEND SECTION START-->
 				<div class="bg-light lg:pt-30">
