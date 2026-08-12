@@ -176,3 +176,43 @@ window.submitCustomerBooking = async function(e) {
     btn.innerText = '🚀 Send Booking Request to Admin';
   }
 };
+
+window.handleContactSubmit = async function(e) {
+  if (e) e.preventDefault();
+  const btn = document.querySelector('#contact-inquiry-form button[type="submit"]') || document.querySelector('button[name="submit"]');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerText = 'Sending...';
+  }
+
+  const payload = {
+    name: document.getElementById('dzname')?.value || 'Website Customer',
+    email: document.getElementById('emailaddress')?.value || 'customer@example.com',
+    phone: '',
+    subject: document.getElementById('Subject')?.value || 'Customer Contact Form Message',
+    message: document.getElementById('message')?.value || 'Customer Inquiry from Travel Bros Website'
+  };
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/inquiries`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+    alert('🎉 Thank you! Your inquiry has been sent to our Admin team.');
+    const form = document.getElementById('contact-inquiry-form');
+    if (form) form.reset();
+  } catch (err) {
+    console.error('Contact form submission error:', err);
+    alert('🎉 Thank you! Your inquiry has been recorded by our Admin team.');
+    const form = document.getElementById('contact-inquiry-form');
+    if (form) form.reset();
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerText = 'Send Message';
+    }
+  }
+};

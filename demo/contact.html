@@ -563,7 +563,7 @@
 											<div class="text-base">We'love to hear from you. Our friendly team is always here to chat</div>
 										</div>
 										<!-- TITLE END-->
-										<form class="dz-form dzForm" method="POST" action="https://travlla.dexignzone.com/tailwind/demo/assets/script/contact_smtp.php">
+										<form class="dz-form dzForm" id="contact-inquiry-form" onsubmit="handleContactSubmit(event)">
 											<input type="hidden" class="block w-full sm:h-18.5 h-12.5 rounded-5xl border border-primary/20 sm:py-5 sm:px-10 py-1.25 px-3.75 sm:text-base text-sm text-bodycolor bg-white outline-0 placeholder:text-bodycolor" name="dzToDo" value="Contact">
 											<input type="hidden" class="block w-full sm:h-18.5 h-12.5 rounded-5xl border border-primary/20 sm:py-5 sm:px-10 py-1.25 px-3.75 sm:text-base text-sm text-bodycolor bg-white outline-0 placeholder:text-bodycolor" name="reCaptchaEnable" value="0">
 											<div class="dzFormMsg"></div>
@@ -957,5 +957,6 @@
 <script src="assets/js/dz.ajax.js"></script>
 <script src="assets/js/animation.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/booking-handler.js"></script>
 </body>
 </html>
