@@ -768,7 +768,7 @@
 				</div> -->
 				<!-- FOOTER BLOCKES START -->  
 				<div class="container">
-					<div class="sm:pt-20 pt-10 text-white/06 border-b border-primary dark:border-white/15">
+					<div class="sm:pt-20 pt-10 text-white border-b border-primary dark:border-white/15">
 						<div class="grid grid-cols-12">
 							<div class="lg:col-span-3 col-span-12 sm:px-3.75">
 								<div class="mb-10">
@@ -1056,20 +1056,30 @@
   }
 
   .animated-flex-card {
-    flex: 1 1 280px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 280px;
-    transition: flex-grow 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-                flex-shrink 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-                box-shadow 0.5s ease;
+    flex: 0 0 auto;
+    width: 33.333333%;
+    max-width: 33.333333%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s ease;
     animation: galleryCardEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
+  @media (max-width: 1024px) {
+    .animated-flex-card {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .animated-flex-card {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
   .animated-flex-card:hover {
-    flex-grow: 1.65;
-    flex-shrink: 0.5;
+    transform: translateY(-6px);
     z-index: 10;
   }
 </style>
@@ -1090,7 +1100,7 @@
     const pageItems = allGalleryItems.slice(startIndex, startIndex + itemsPerPage);
 
     if (pageItems.length > 0) {
-      // Dynamic Flex Card Listing with flex-grow / flex-shrink animations & staggered entrance
+      // Clean Equal Grid Listing with entrance animations
       container.innerHTML = pageItems.map((item, index) => {
         const animDelay = (index % itemsPerPage) * 70;
         return `

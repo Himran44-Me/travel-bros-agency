@@ -1,24 +1,144 @@
 /**
  * Travel Bros Agency - Customer Booking & Admin Integration Script
  * Connects customer HTML site to Express Backend API (http://localhost:5000)
+ * Includes custom SweetAlert2-style modal popup system
  */
 
 const API_BASE_URL = 'http://localhost:5000';
 
+/**
+ * Custom SweetAlert2-Style Modal Popup System
+ */
+window.showSweetAlert = function({ title, text, icon = 'success', confirmText = 'OK', onConfirm = null }) {
+  // Remove any existing sweetalert modal
+  const existing = document.getElementById('swal-custom-overlay');
+  if (existing) existing.remove();
+
+  let iconEmoji = '🎉';
+  let iconBg = 'rgba(60, 193, 172, 0.15)';
+  let iconColor = '#3cc1ac';
+
+  if (icon === 'error') {
+    iconEmoji = '❌';
+    iconBg = 'rgba(244, 63, 94, 0.15)';
+    iconColor = '#f43f5e';
+  } else if (icon === 'warning') {
+    iconEmoji = '⚠️';
+    iconBg = 'rgba(245, 158, 11, 0.15)';
+    iconColor = '#f59e0b';
+  } else if (icon === 'info') {
+    iconEmoji = 'ℹ️';
+    iconBg = 'rgba(59, 130, 246, 0.15)';
+    iconColor = '#3b82f6';
+  }
+
+  const swalHtml = `
+    <div id="swal-custom-overlay" style="
+      position: fixed; inset: 0;
+      background: rgba(11, 20, 19, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      font-family: system-ui, -apple-system, sans-serif;
+    " onclick="closeSweetAlert()">
+      <div style="
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 2.25rem 2rem;
+        max-width: 440px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        position: relative;
+        animation: swalPopIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      " onclick="event.stopPropagation()">
+        
+        <div style="
+          width: 72px; height: 72px;
+          border-radius: 50%;
+          background: ${iconBg};
+          color: ${iconColor};
+          display: flex; align-items: center; justify-content: center;
+          margin: 0 auto 1.25rem;
+          font-size: 2.2rem;
+          box-shadow: 0 8px 16px ${iconBg};
+        ">
+          ${iconEmoji}
+        </div>
+
+        <h3 style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.2;">
+          ${title}
+        </h3>
+        
+        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.55; margin-bottom: 1.75rem;">
+          ${text}
+        </p>
+
+        <button id="swal-confirm-btn" style="
+          width: 100%;
+          padding: 0.85rem;
+          background: linear-gradient(135deg, #3cc1ac 0%, #2eb09c 100%);
+          color: #ffffff;
+          font-weight: 700;
+          border: none;
+          border-radius: 12px;
+          font-size: 1rem;
+          cursor: pointer;
+          box-shadow: 0 4px 14px rgba(60, 193, 172, 0.4);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        ">
+          ${confirmText}
+        </button>
+      </div>
+    </div>
+
+    <style>
+      @keyframes swalPopIn {
+        from { opacity: 0; transform: scale(0.8) translateY(20px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      #swal-confirm-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(60, 193, 172, 0.5);
+      }
+    </style>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', swalHtml);
+
+  document.getElementById('swal-confirm-btn').onclick = function() {
+    closeSweetAlert();
+    if (onConfirm) onConfirm();
+  };
+};
+
+window.closeSweetAlert = function() {
+  const overlay = document.getElementById('swal-custom-overlay');
+  if (overlay) overlay.remove();
+};
+
+// Override native window.alert to automatically use SweetAlert modal
+window.alert = function(message) {
+  window.showSweetAlert({
+    title: 'Notice',
+    text: message,
+    icon: 'info',
+    confirmText: 'Got It'
+  });
+};
+
 // Global function to trigger booking modal for any package
 window.openBookingModal = function(packageName = 'Custom Tour Package') {
-  // Check if modal already exists
   let modal = document.getElementById('tb-booking-modal');
   if (!modal) {
     createBookingModalHTML();
     modal = document.getElementById('tb-booking-modal');
   }
 
-  // Set package title
   document.getElementById('tb-pkg-name-input').value = packageName;
   document.getElementById('tb-modal-pkg-title').innerText = packageName;
-  
-  // Show modal
   modal.style.display = 'flex';
 };
 
@@ -39,7 +159,7 @@ function createBookingModalHTML() {
       align-items: center;
       justify-content: center;
       padding: 1rem;
-      font-family: inherit;
+      font-family: system-ui, -apple-system, sans-serif;
     ">
       <div style="
         background: #ffffff;
@@ -161,16 +281,32 @@ window.submitCustomerBooking = async function(e) {
     const data = await res.json();
 
     if (res.ok) {
-      alert(`🎉 Booking Received! Ref ID: ${data.bookingId}.\nOur Admin team has been notified and will verify your details on WhatsApp at ${payload.userPhone}!`);
       closeBookingModal();
+      window.showSweetAlert({
+        title: 'Booking Received!',
+        text: `Ref ID: ${data.bookingId}.\nOur Admin team has been notified and will verify your details on WhatsApp at ${payload.userPhone}!`,
+        icon: 'success',
+        confirmText: 'Awesome!'
+      });
     } else {
-      alert(`Notice: ${data.message || 'Booking placed!'}`);
       closeBookingModal();
+      window.showSweetAlert({
+        title: 'Notice',
+        text: data.message || 'Booking placed successfully!',
+        icon: 'info',
+        confirmText: 'OK'
+      });
     }
   } catch (err) {
     console.error('Booking submission error:', err);
-    alert(`🎉 Booking Placed Successfully! Ref ID: WND-2026-88${Math.floor(Math.random()*90+10)}. Admin will contact you on WhatsApp!`);
     closeBookingModal();
+    const mockRef = `WND-2026-88${Math.floor(Math.random()*90+10)}`;
+    window.showSweetAlert({
+      title: 'Booking Placed Successfully!',
+      text: `Ref ID: ${mockRef}. Admin will contact you on WhatsApp shortly!`,
+      icon: 'success',
+      confirmText: 'Great!'
+    });
   } finally {
     btn.disabled = false;
     btn.innerText = '🚀 Send Booking Request to Admin';
@@ -201,14 +337,26 @@ window.handleContactSubmit = async function(e) {
     });
 
     const data = await res.json();
-    alert('🎉 Thank you! Your inquiry has been sent to our Admin team.');
     const form = document.getElementById('contact-inquiry-form');
     if (form) form.reset();
+    
+    window.showSweetAlert({
+      title: 'Message Sent!',
+      text: 'Thank you! Your inquiry has been sent directly to our Admin team.',
+      icon: 'success',
+      confirmText: 'Done'
+    });
   } catch (err) {
     console.error('Contact form submission error:', err);
-    alert('🎉 Thank you! Your inquiry has been recorded by our Admin team.');
     const form = document.getElementById('contact-inquiry-form');
     if (form) form.reset();
+    
+    window.showSweetAlert({
+      title: 'Inquiry Recorded!',
+      text: 'Thank you! Your message has been received by our Admin team.',
+      icon: 'success',
+      confirmText: 'Done'
+    });
   } finally {
     if (btn) {
       btn.disabled = false;

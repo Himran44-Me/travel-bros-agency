@@ -3,12 +3,12 @@ const TravllaGsap = function(){
   
   let smoother;
 
-  if (!smoother) {
+  if (!smoother && document.getElementById("smooth-wrapper") && document.getElementById("smooth-content")) {
     smoother = ScrollSmoother.create({
-      smooth: 2,
+      smooth: 1.5,
       effects: true,
-      normalizeScroll: true,
-      smoothTouch: 0.1, 
+      normalizeScroll: false,
+      smoothTouch: false, 
     });
   }
   const header = document.querySelector('#headerWrapper1');
@@ -200,14 +200,28 @@ const TravllaGsap = function(){
   };
 };
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   TravllaGsap().init();
+  if (typeof ScrollTrigger !== "undefined") {
+    ScrollTrigger.refresh();
+  }
+});
+
+window.addEventListener("load", () => {
+  if (typeof ScrollTrigger !== "undefined") {
+    ScrollTrigger.refresh();
+    setTimeout(() => ScrollTrigger.refresh(), 300);
+    setTimeout(() => ScrollTrigger.refresh(), 1000);
+    setTimeout(() => ScrollTrigger.refresh(), 2500);
+  }
 });
 
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    ScrollTrigger.refresh();
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.refresh();
+    }
   }, 250);
 });
