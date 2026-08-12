@@ -1097,6 +1097,29 @@
 					<div class="absolute -right-13.75 top-2/5 w-27.5 animate-slide-top"><img src="assets/images/hotballon-right.png" alt="image" width="110" height="166"></div>
 				</div>
 				<!--POPULAR DESTINATION SECTION END-->
+				<script>
+					function filterDestinations(category, btn) {
+						document.querySelectorAll('.dest-filter-btn').forEach(b => {
+							b.classList.remove('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+							b.classList.add('border', 'border-primary/20', 'text-heading', 'dark:text-white');
+						});
+						btn.classList.add('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+						btn.classList.remove('border', 'border-primary/20', 'text-heading', 'dark:text-white');
+
+						const cards = document.querySelectorAll('.dest-card-item');
+						cards.forEach(card => {
+							if (category === 'all' || card.dataset.category === category) {
+								card.style.display = 'block';
+								card.style.opacity = '1';
+								card.style.transform = 'scale(1)';
+							} else {
+								card.style.display = 'none';
+								card.style.opacity = '0';
+								card.style.transform = 'scale(0.95)';
+							}
+						});
+					}
+				</script>
 
 						  <!-- tv service style 1 start -->
                 <div class="bg-primary lg:py-30 py-12.5 px-5">
