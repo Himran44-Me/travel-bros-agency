@@ -1160,7 +1160,10 @@
 
   async function loadGallery() {
     try {
-      const response = await fetch('http://localhost:5000/api/gallery');
+      const apiHost = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:5000'
+        : 'https://travel-agency-wwfj.onrender.com';
+      const response = await fetch(`${apiHost}/api/gallery`);
       if (!response.ok) return;
       const galleryItems = await response.json();
       

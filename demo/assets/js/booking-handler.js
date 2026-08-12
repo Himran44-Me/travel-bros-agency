@@ -4,7 +4,9 @@
  * Includes custom SweetAlert2-style modal popup system
  */
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5000'
+  : 'https://travel-agency-wwfj.onrender.com';
 
 /**
  * Custom SweetAlert2-Style Modal Popup System
