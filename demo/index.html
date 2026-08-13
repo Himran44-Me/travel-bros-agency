@@ -600,16 +600,45 @@
 					.dest-card-inner {
 						padding: 22px !important;
 						border-radius: 28px !important;
+						border: none !important;
+						box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+						transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
 					}
 
-					.dest-card-body {
-						padding: 14px 8px 6px 8px !important;
+					.dest-card-item:hover .dest-card-inner {
+						box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14) !important;
+						transform: translateY(-8px);
 					}
 
-					.dest-card-footer {
-						padding-top: 14px !important;
-						padding-left: 8px !important;
-						padding-right: 8px !important;
+					.dest-arrow-btn {
+						width: 42px !important;
+						height: 42px !important;
+						border-radius: 50% !important;
+						border: none !important;
+						background-color: var(--color-citrusyellow, #eab308) !important;
+						color: #111827 !important;
+						display: flex !important;
+						align-items: center !important;
+						justify-content: center !important;
+						transition: all 0.3s ease !important;
+						box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+					}
+
+					.group:hover .dest-arrow-btn,
+					.dest-arrow-btn:hover {
+						background-color: var(--color-primary, #3cc1ac) !important;
+						color: #ffffff !important;
+						transform: scale(1.12) !important;
+						box-shadow: 0 6px 18px rgba(60, 193, 172, 0.4) !important;
+					}
+
+					.dest-arrow-btn i {
+						transition: transform 0.3s ease !important;
+					}
+
+					.group:hover .dest-arrow-btn i,
+					.dest-arrow-btn:hover i {
+						transform: translateX(3px) !important;
 					}
 
 					@media (max-width: 1024px) {
@@ -696,8 +725,8 @@
 									</div>
 									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
 										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
-										<a href="lakshadweepPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
-											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										<a href="lakshadweepPack.html" class="dest-arrow-btn" aria-label="Explore Package">
+											<i class="fa-solid fa-arrow-right text-sm"></i>
 										</a>
 									</div>
 								</div>
@@ -725,8 +754,8 @@
 									</div>
 									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
 										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
-										<a href="andamanNico.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
-											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										<a href="andamanNico.html" class="dest-arrow-btn" aria-label="Explore Package">
+											<i class="fa-solid fa-arrow-right text-sm"></i>
 										</a>
 									</div>
 								</div>
@@ -755,8 +784,8 @@
 									</div>
 									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
 										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
-										<a href="bhutanPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
-											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										<a href="bhutanPack.html" class="dest-arrow-btn" aria-label="Explore Package">
+											<i class="fa-solid fa-arrow-right text-sm"></i>
 										</a>
 									</div>
 								</div>
@@ -784,8 +813,8 @@
 									</div>
 									<div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5 mt-auto">
 										<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Explore Package</span>
-										<a href="nepalPack.html" class="size-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-heading dark:text-white group-hover:bg-citrusyellow group-hover:border-citrusyellow group-hover:text-primary transition-all duration-300 shadow-sm">
-											<i class="fa-solid fa-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300 text-sm"></i>
+										<a href="nepalPack.html" class="dest-arrow-btn" aria-label="Explore Package">
+											<i class="fa-solid fa-arrow-right text-sm"></i>
 										</a>
 									</div>
 								</div>
