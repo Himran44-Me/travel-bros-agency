@@ -615,21 +615,21 @@
 						height: 42px !important;
 						border-radius: 50% !important;
 						border: none !important;
-						background-color: var(--color-citrusyellow, #eab308) !important;
-						color: #111827 !important;
+						background-color: var(--color-primary, #3cc1ac) !important;
+						color: #ffffff !important;
 						display: flex !important;
 						align-items: center !important;
 						justify-content: center !important;
 						transition: all 0.3s ease !important;
-						box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+						box-shadow: 0 4px 12px rgba(60, 193, 172, 0.3) !important;
 					}
 
 					.group:hover .dest-arrow-btn,
 					.dest-arrow-btn:hover {
-						background-color: var(--color-primary, #3cc1ac) !important;
+						background-color: #28a08f !important;
 						color: #ffffff !important;
 						transform: scale(1.12) !important;
-						box-shadow: 0 6px 18px rgba(60, 193, 172, 0.4) !important;
+						box-shadow: 0 6px 18px rgba(60, 193, 172, 0.5) !important;
 					}
 
 					.dest-arrow-btn i {
@@ -686,16 +686,16 @@
 
 						<!-- INTERACTIVE CATEGORY TAB FILTERS -->
 						<div class="flex flex-wrap justify-center items-center gap-3 mb-12 text-center">
-							<button type="button" onclick="filterDestinations('all', this)" class="dest-filter-btn active px-6 py-2.5 rounded-full font-bold text-sm duration-300 cursor-pointer bg-citrusyellow text-primary shadow-lg scale-105">
+							<button type="button" onclick="filterDestinations('all', this)" class="dest-filter-btn active px-6 py-2.5 rounded-full font-bold text-sm duration-300 cursor-pointer bg-primary text-white shadow-lg scale-105">
 								<i class="fa-solid fa-grid-2 me-1.5"></i> All Places
 							</button>
-							<button type="button" onclick="filterDestinations('domestic', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+							<button type="button" onclick="filterDestinations('domestic', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-primary hover:text-white hover:border-primary hover:scale-105">
 								<i class="fa-solid fa-compass me-1.5"></i> Domestic
 							</button>
-							<button type="button" onclick="filterDestinations('international', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+							<button type="button" onclick="filterDestinations('international', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-primary hover:text-white hover:border-primary hover:scale-105">
 								<i class="fa-solid fa-plane-departure me-1.5"></i> International
 							</button>
-							<button type="button" onclick="filterDestinations('coming-soon', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-citrusyellow/30 hover:scale-105">
+							<button type="button" onclick="filterDestinations('coming-soon', this)" class="dest-filter-btn px-6 py-2.5 rounded-full font-semibold text-sm duration-300 cursor-pointer border border-primary/20 text-heading dark:text-white hover:bg-primary hover:text-white hover:border-primary hover:scale-105">
 								<i class="fa-solid fa-sparkles me-1.5"></i> Coming Soon
 							</button>
 						</div>
@@ -1005,10 +1005,10 @@
 				<script>
 					function filterDestinations(category, btn) {
 						document.querySelectorAll('.dest-filter-btn').forEach(b => {
-							b.classList.remove('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+							b.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'scale-105', 'font-bold');
 							b.classList.add('border', 'border-primary/20', 'text-heading', 'dark:text-white');
 						});
-						btn.classList.add('bg-citrusyellow', 'text-primary', 'shadow-md', 'font-bold');
+						btn.classList.add('bg-primary', 'text-white', 'shadow-lg', 'scale-105', 'font-bold');
 						btn.classList.remove('border', 'border-primary/20', 'text-heading', 'dark:text-white');
 
 						const cards = document.querySelectorAll('.dest-card-item');
