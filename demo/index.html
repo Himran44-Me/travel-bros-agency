@@ -587,18 +587,34 @@
 					}
 
 					.dest-card-item {
-						flex: 1 1 280px;
-						max-width: 340px;
-						transition: flex-grow 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-						            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-						            box-shadow 0.5s ease;
+						flex: 0 0 auto;
+						width: calc(33.333% - 22px);
+						max-width: 380px;
+						min-width: 290px;
+						margin-bottom: 28px;
+						transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+						            box-shadow 0.4s ease;
 						animation: destEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 					}
 
+					@media (max-width: 1024px) {
+						.dest-card-item {
+							width: calc(50% - 16px);
+							max-width: 100%;
+						}
+					}
+
+					@media (max-width: 640px) {
+						.dest-card-item {
+							width: 100%;
+							max-width: 100%;
+							margin-bottom: 20px;
+						}
+					}
+
 					.dest-card-item:hover {
-						flex-grow: 1.25;
 						transform: translateY(-8px);
-						z-index: 20;
+						z-index: 10;
 					}
 				</style>
 
@@ -638,10 +654,10 @@
 						</div>
 
 						<!-- DESTINATIONS FLEX CONTAINER (MATCHING REFERENCE DESIGN) -->
-						<div class="flex flex-wrap justify-center gap-6" id="destinations-grid">
+						<div class="flex flex-wrap justify-center gap-7 lg:gap-8" id="destinations-grid">
 							<!-- ACTIVE DOMESTIC ITEMS -->
 							<div class="dest-card-item" data-category="domestic">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="lakshadweepPack.html">
 											<img src="assets/images/destinations/style1/lakshadweep.jpg" alt="Lakshadweep" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -670,7 +686,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="domestic">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="andamanNico.html">
 											<img src="assets/images/destinations/style1/Andaman and Nicobar Islands.jpg" alt="Andaman & Nicobar" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -700,7 +716,7 @@
 
 							<!-- ACTIVE INTERNATIONAL ITEMS -->
 							<div class="dest-card-item" data-category="international">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="bhutanPack.html">
 											<img src="assets/images/destinations/style1/bhutan.jpg" alt="Bhutan" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -729,7 +745,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="international">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="nepalPack.html">
 											<img src="assets/images/destinations/style1/Nepal.jpg" alt="Nepal" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -759,7 +775,7 @@
 
 							<!-- COMING SOON ITEMS -->
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/kashmir.jpg" alt="Kashmir" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -788,7 +804,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/leh_ladakh.jpg" alt="Manali" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -817,7 +833,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/himchal.jpg" alt="Shimla" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -846,7 +862,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/meghalaya.jpg" alt="Meghalaya" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -875,7 +891,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/goa.jpg" alt="Goa" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
@@ -904,7 +920,7 @@
 							</div>
 
 							<div class="dest-card-item" data-category="coming-soon">
-								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-4.5 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
+								<div class="group bg-white dark:bg-dark-600 rounded-3xl p-6 border border-gray-100 dark:border-white/10 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-full">
 									<div class="rounded-2xl overflow-hidden relative h-52 w-full mb-4">
 										<a href="javascript:void(0)">
 											<img src="assets/images/destinations/style1/thailand.jpg" alt="Thailand" class="w-full h-full object-cover object-center transform duration-500 group-hover:scale-108">
