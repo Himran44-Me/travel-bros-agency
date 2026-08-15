@@ -1,4 +1,4 @@
-const Travlla = (function () {
+const TRAWELL BROS = (function () {
 	const handleCursorsection = () => {
 		let cursor = document.querySelector(".cursor");
 		let cursor2 = document.querySelector(".cursor2");
@@ -647,5 +647,5 @@ const Travlla = (function () {
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  Travlla.init();
+  TRAWELL BROS.init();
 });

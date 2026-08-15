@@ -1,4 +1,4 @@
-const TravllaCarousel = function () {
+const TRAWELL BROSCarousel = function () {
 	const handleReviewSlider = function () {
 		const reviewSliderEl = document.querySelector(".reviewtwo-slider");
 
@@ -1102,5 +1102,5 @@ const TravllaCarousel = function () {
 };
 
 window.addEventListener("load", function () {
-  TravllaCarousel().load();
+  TRAWELL BROSCarousel().load();
 });

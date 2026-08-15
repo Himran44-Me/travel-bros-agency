@@ -1,4 +1,4 @@
-const TravllaGsap = function(){
+const TRAWELL BROSGsap = function(){
   gsap.registerPlugin( ScrollSmoother, ScrollTrigger );
   
   let smoother;
@@ -201,7 +201,7 @@ const TravllaGsap = function(){
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  TravllaGsap().init();
+  TRAWELL BROSGsap().init();
   if (typeof ScrollTrigger !== "undefined") {
     ScrollTrigger.refresh();
   }
