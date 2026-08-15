@@ -65,23 +65,83 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&display=swap"
 		rel="stylesheet">
 	
+    <style>
+    .loading-area {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+    }
 
+    .loading-pic {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trawell-loader-logo {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+        display: block;
+        animation: trawellLogoPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes trawellLogoPulse {
+        0% {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+    }
+	.trawell-loader-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    animation: trawellLogoRotate 2s linear infinite;
+    }
+
+    @keyframes trawellLogoRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+    }
+    </style>
 </head>
 
 <body id="bg" class="selection:bg-[#484848] selection:text-white">
 	<!-- LOADING AREA START ===== -->
 	<div class="loading-area">
-		<div class="loading-box"></div>
-		<div class="loading-pic">
-			<figure class="loader">
-				<div class="dot white"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
-			</figure>
-		</div>
-	</div>
+    <div class="loading-box"></div>
+
+    <div class="loading-pic">
+        <img 
+            src="../demo/assets/images/trawell.png"
+            alt="Trawell Bros"
+            class="trawell-loader-logo"
+        >
+    </div>
+    </div>
 	<!-- LOADING AREA  END ====== -->
 
 	<!-- Curser Pointer -->
@@ -1229,6 +1289,30 @@
 											<div class="swiper-slide">
 												<div class="text-center">
 													<a href="about-1.html"><img
+															src="assets/images/client-logo/dark/faded.jpeg"
+															class="w-auto h-12 md:h-13 max-h-13 mx-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+															alt="img" width="339" height="81" loading="lazy"></a>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="text-center">
+													<a href="about-1.html"><img
+															src="assets/images/client-logo/dark/NOVOX EDTECH LOGO Board .webp"
+															class="w-auto h-12 md:h-13 max-h-13 mx-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+															alt="img" width="339" height="81" loading="lazy"></a>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="text-center">
+													<a href="about-1.html"><img
+															src="assets/images/client-logo/dark/novoxCoreLogo.webp"
+															class="w-auto h-12 md:h-13 max-h-13 mx-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+															alt="img" width="339" height="81" loading="lazy"></a>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="text-center">
+													<a href="about-1.html"><img
 															src="assets/images/client-logo/dark/union bang logo.png"
 															class="w-auto h-12 md:h-13 max-h-13 mx-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
 															alt="img" width="232" height="91" loading="lazy"></a>
@@ -1252,10 +1336,10 @@
 											</div>
 											<div class="swiper-slide">
 												<div class="text-center">
-													<a href="about-1.html"><img
+													<a href="about-1.html"><img style="height: 100px;"
 															src="assets/images/client-logo/dark/lakshadweep_logo.png"
 															class="w-auto h-12 md:h-13 max-h-13 mx-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
-															alt="img" width="211" height="91" loading="lazy"></a>
+															alt="img" width="219" height="91" loading="lazy"></a>
 												</div>
 											</div>
 											<div class="swiper-slide">

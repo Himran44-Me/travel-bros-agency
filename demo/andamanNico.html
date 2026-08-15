@@ -46,23 +46,83 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&display=swap"
         rel="stylesheet">
+    <style>
+    .loading-area {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+    }
 
+    .loading-pic {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trawell-loader-logo {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+        display: block;
+        animation: trawellLogoPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes trawellLogoPulse {
+        0% {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+    }
+	.trawell-loader-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    animation: trawellLogoRotate 2s linear infinite;
+    }
+
+    @keyframes trawellLogoRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+    }
+    </style>
 </head>
 
 <body id="bg" class="selection:bg-[#484848] selection:text-white">
 
     <!-- LOADING AREA START ===== -->
     <div class="loading-area">
-        <div class="loading-box"></div>
-        <div class="loading-pic">
-            <figure class="loader">
-                <div class="dot white"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </figure>
-        </div>
+    <div class="loading-box"></div>
+
+    <div class="loading-pic">
+        <img 
+            src="../demo/assets/images/trawell.png"
+            alt="Trawell Bros"
+            class="trawell-loader-logo"
+        >
+    </div>
     </div>
     <!-- LOADING AREA  END ====== -->
 
